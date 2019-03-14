@@ -13,3 +13,6 @@
 
 	/* Direct to the home page */
 	Route::get('/', ['as' => 'homepage', 'uses' => 'HomepageController@showHomepage']);
+
+	/* Direct to the home page */
+	Route::get('/signup', ['as' => 'signup', 'uses' => 'RegistrationController@showRegistration']);
