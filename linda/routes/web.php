@@ -12,11 +12,10 @@
 */
 
 	/* Direct to the home page */
-<<<<<<< Updated upstream
-	Route::get('/', ['as' => 'homepage', 'uses' => 'HomepageController@showHomepage']);
+	Route::get('/', ['as' => 'homepage', 'uses' => 'homepageController@showHomepage']);
 
 	/* Direct to the home page */
 	Route::get('/signup', ['as' => 'signup', 'uses' => 'RegistrationController@showRegistration']);
-=======
-	Route::get('/', ['as' => 'homepage', 'uses' => 'homepageController@showHomepage']);
->>>>>>> Stashed changes
+
+	
+
