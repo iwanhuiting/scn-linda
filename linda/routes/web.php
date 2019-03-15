@@ -11,11 +11,16 @@
 |
 */
 
+	
 	/* Direct to the home page */
-	Route::get('/', ['as' => 'homepage', 'uses' => 'homepageController@showHomepage']);
+	Route::get('/', ['as' => 'homepage', 'uses' => 'homepageController@showHomePage']);
+
+	/* Direct to the home page */
+	Route::get('/startpage', ['as' => 'startpage', 'uses' => 'homepageController@showStartPage']);
 
 	/* Direct to the home page */
 	Route::get('/signup', ['as' => 'signup', 'uses' => 'RegistrationController@showRegistration']);
 
+	/* Direct to the login */
 	Route::get('/login', ['as' => 'login', 'uses' => 'LoginController@showLogin']);
 
