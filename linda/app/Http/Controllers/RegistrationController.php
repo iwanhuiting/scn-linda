@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 
-class homepageController extends Controller
+class RegistrationController extends Controller
 
 {
 
@@ -23,7 +23,7 @@ class homepageController extends Controller
         ];
 
         // return view.
-		return view('homepage.homepage', compact('attributes'));
+		return view('signup.signup', compact('attributes'));
 	}
 
 }
