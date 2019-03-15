@@ -1,40 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<!-- --------------------------------------------- -->
-<!-- Realisatie: full-service internetbureau Praes -->
-<!-- 050 - 8200 900  |  info@praes.nl  |  praes.nl -->
-<!-- --------------------------------------------- -->
+<html class="uk-height-viewport">
 
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="csrf-token" content="{{ csrf_token() }}">
+    @include('shared.head')
 
-@hasSection('title')
-	<title>@yield('title') | CRM-applicatie</title>
-@else
-	<title>CRM-applicatie</title>
-@endif
+    <body id="app" class="">
 
-<link rel="stylesheet" href="/css/uikit.css" >
-<link rel="stylesheet" href="/css/login.css">
+        <header uk-sticky>
+            @include('shared.navbar')
 
-<link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+            @hasSection('toolbar')
+                <div class="tm-toolbar">
+                    <div class="uk-container">
+                        @yield('toolbar')
+                    </div>
+                </div>
+            @endif
+        </header>
 
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,600' rel='stylesheet'>
-<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+        @hasSection('header')
+            <section class="tm-header">
+                @yield('header')
+            </section>
+        @endif
 
-</head>
-<body>
+        <main>
 
-	@yield('content')
+            @yield('main')
+            
+        </main>
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="/js/uikit.min.js"></script>
+        @hasSection('modals')
+            @yield('modals')
+        @endif
 
-</body>
+        @hasSection('scripts.footer')
+            @yield('scripts.footer')
+        @endif
+
+    </body>
 </html>
-
-
 
