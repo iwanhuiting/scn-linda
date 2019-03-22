@@ -21,6 +21,5 @@
 	/* Direct to the home page */
 	Route::get('/signup', ['as' => 'signup', 'uses' => 'RegistrationController@showRegistration']);
 
-	/* Direct to the login */
 	Route::get('/login', ['as' => 'login', 'uses' => 'LoginController@showLogin']);
 
