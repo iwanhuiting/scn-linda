@@ -5,7 +5,7 @@
 <div class="uk-container uk-margin-medium-top uk-width-2-3	">
 
 <!-- De slideshow -->
-<div class="uk-position-relative uk-width-2-3 uk-visible-toggle uk-light uk-container" tabindex="-1" uk-slideshow="animation: fade">
+<div class="uk-position-relative uk-width-2-3 uk-visible-toggle uk-light uk-container" tabindex="-1" uk-slideshow="animation: pull">
 
     <ul class="uk-slideshow-items">
         <li>
@@ -35,6 +35,16 @@
     <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
 
 </div>
+
+
+
+
+
+
+
+
+
+
 </div>
 
 @endsection
