@@ -4,7 +4,7 @@
 
         <nav class="uk-navbar uk-height-1-1" uk-navbar>
 
-            <a class="uk-navbar-item uk-logo uk-margin-small-left" href="#">
+            <a class="uk-navbar-item uk-logo uk-margin-small-left" href="/">
                 <span class="uk-text-bold">IT</span> ogether
             </a>
 
