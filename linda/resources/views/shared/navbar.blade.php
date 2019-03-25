@@ -9,7 +9,7 @@
             </a>
 
         		<!-- Search bar -->
-            <div>
+            <!-- <div>
             <a class="uk-navbar-toggle uk-align-right" uk-search-icon href="#"></a>
             <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
                 <form class="uk-search uk-search-navbar uk-width-1-1">
@@ -17,7 +17,7 @@
                 </form>
             </div>
 
-        </div>
+        </div> -->
 
         </nav>
 
