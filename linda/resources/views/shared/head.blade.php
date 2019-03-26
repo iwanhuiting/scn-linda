@@ -12,7 +12,7 @@
 @hasSection('title')
 	<title>@yield('title') | CRM-applicatie</title>
 @else
-	<title>CRM-applicatie</title>
+	<title>IToghether</title>
 @endif
 
 @hasSection('stylesheets.header.before')

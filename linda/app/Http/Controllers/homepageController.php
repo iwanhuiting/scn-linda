@@ -15,6 +15,8 @@ class homepageController extends Controller
      */
 	public function showStartPage()
 	{
+        // Get the user
+        $user = Auth::user();
 
 		// Set the view attributes.
 		$attributes = [
@@ -23,7 +25,7 @@ class homepageController extends Controller
         ];
 
         // return view.
-		return view('homepage.startpage', compact('attributes'));
+		return view('homepage.startpage', compact('user', 'attributes'));
 	}
 
         /**
@@ -33,6 +35,8 @@ class homepageController extends Controller
      */
     public function showHomePage()
     {
+        // Get the user
+        $user = Auth::user();
 
         // Set the view attributes.
         $attributes = [
@@ -41,7 +45,7 @@ class homepageController extends Controller
         ];
 
         // return view.
-        return view('homepage.homepage', compact('attributes'));
+        return view('homepage.homepage', compact('user', 'attributes'));
     }
 
 }

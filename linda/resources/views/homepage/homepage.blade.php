@@ -4,8 +4,8 @@
     <div class="uk-inline-clip" style="width: 100%; height: 300px; background-color: white;">
          <div class="uk-text-center uk-position-center">
               <h2 class="uk-margin-remove-bottom">Welcome to 
-                   <span class="uk-text-bold" style="color: #666;">IT</span>
-                   <span style="color: #666;">ogether</span>
+                   <span style="color: #666;"><b>IT</b>ogether</span>
+                    
               </h2>
               <h3 class="uk-margin-remove-top" style="text-align: center;">This is a space for students and tutors to exchange information and intelligence on one simple platform.<br> Log-in below to acces all the videos and files, don't have an account yet? <a href="signup">Sign up</a></h3>
          </div>
