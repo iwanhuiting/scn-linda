@@ -14,7 +14,7 @@
 
 
 		<div class="uk-grid-match uk-grid-small" uk-grid >
-		    <div class="uk-width-1-3 uk-margin-medium-top uk-text-center">
+		    <div class="uk-width-1-2 uk-margin-medium-top uk-text-center">
 		        <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
 		            <img src="images/Teacher.jpg" alt="">
 		            <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
@@ -23,21 +23,14 @@
 		        </div>
 		    </div>
 
-		    <div class="uk-width-1-3 uk-margin-medium-top" class="uk-text-center">
+		    <div class="uk-width-1-2 uk-margin-medium-top" class="uk-text-center">
 		        <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
-		            <img src="images/Student.jpg" alt="">
-		            <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
-		                <p class="uk-h4 uk-margin-remove">Log-in as a student</p>
-		            </div>
-		        </div>
-		    </div>
-
-		    <div class="uk-width-1-3 uk-margin-medium-top" class="uk-text-center">
-		        <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
-		            <img src="images/Guest.jpg" alt="">
-		            <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
-		                <p class="uk-h4 uk-margin-remove">Log-in as a guest</p>
-		            </div>
+		        	<a href="{{ route('login') }}">
+			            <img src="images/Student.jpg" alt="">
+			            <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
+			                <p class="uk-h4 uk-margin-remove">Log-in as a student</p>
+			            </div>
+		        	</a>
 		        </div>
 		    </div>
 		</div>

@@ -21,5 +21,12 @@
 	/* Direct to the home page */
 	Route::get('/signup', ['as' => 'signup', 'uses' => 'RegistrationController@showRegistration']);
 
-	Route::get('/login', ['as' => 'login', 'uses' => 'LoginController@showLogin']);
+	/* Direct to the home page */
+	Route::post('/signup', ['as' => 'signup', 'uses' => 'RegistrationController@storeUser']);
 
+	/* Direct to the home page */
+	Route::get('/logout', ['as' => 'logout', 'uses' => 'LoginController@logout']);
+
+	Auth::routes();
+
+	Route::get('/home', 'HomeController@index')->name('home');
