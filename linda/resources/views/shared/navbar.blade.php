@@ -8,13 +8,17 @@
                 <span class="uk-text-bold">IT</span>ogether
             </a>
 
-            @if(isset($user->first_name))
+            @if(isset($currentuser->first_name))
             <span class="uk-navbar-right">
-                <button class="uk-button uk-button-default" style="height: 100%; color: white; border: none;" type="button">@if($user->first_name) {{ $user->first_name }} @endif</button>
+                <button class="uk-button uk-button-default" style="height: 100%; color: white; border: none;" type="button">@if($currentuser->first_name) {{ $currentuser->first_name }} @endif</button>
                 <div uk-dropdown>
-                    <ul class="uk-nav uk-dropdown-nav" style="color: white;">
-                        <li class="uk-active"><a href="{{ route('logout') }}">Logout</a></li>
-                        <li><a href="#">Dit ziet er goed uit</a></li>
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active">Algemene opties</li>
+                        <li><a href="{{ route('logout') }}">Log-uit</a></li>
+                        @if($currentuser->admin == 1)
+                            <li class="uk-active">Admin paneel</li>
+                            <li><a href="{{ route('userpanel') }} ">Gebruikers overzicht</a></li>
+                        @endif
                     </ul>
                 </div>
             </span>

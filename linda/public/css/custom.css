@@ -1,0 +1,234 @@
+html {
+	background: #eee;
+	text-transform: none;
+}
+
+
+.tm-block-navbar {
+	min-height: 55px;
+
+
+}
+
+.uk-navbar-item, .uk-navbar-nav > li > a, .uk-navbar-toggle { height: 60px; }
+
+.tm-block-toolbar {
+	background: #fff;
+	padding-top: 20px;
+	border-bottom: 2px solid #e3e3e3;
+}
+
+.tm-block-toolbar .tm-header {
+	
+
+}
+
+.tm-block-toolbar .tm-subnav > .uk-subnav {
+	margin-bottom: 0;
+
+}
+
+.tm-block-main {
+	padding: 35px 0;
+}
+
+.tm-navbar {
+	z-index: 999; 
+	top:0; 
+	position: fixed; 
+	width: 100%; 
+	border-bottom: 1px solid #f7f7f7; 
+	background: #00adef;
+	color: #fff;
+}
+
+.tm-nav-hover:hover {
+    background-color: #26677F;
+    
+} 
+
+a.uk-open, .uk-navbar-nav > li > a:hover {
+	color: #fff;
+}
+
+
+
+/* App panels
+--------------------------------------------------------------------------------------------- */
+
+.tm-panel {
+	background: #fff;
+	padding: 25px 25px;
+}
+
+
+/* Navigation section
+--------------------------------------------------------------------------------------------- */
+
+.uk-form input.tm-search { 
+	width: 300px; 
+	border-radius: 20px; 
+}
+
+
+/* Toolbar
+--------------------------------------------------------------------------------------------- */
+
+.tm-no-data > i {
+	font-size: 132px;
+	color: #bdbdbd;
+}
+
+.tm-no-data > h2 {
+	color: #bdbdbd;
+	font-size: 42px;
+	font-weight: 600;
+	margin-bottom: 35px;
+}
+
+.tm-sad-face {
+	margin-top: 50px;
+	font-size: 144px;
+}
+
+/*  (Justin Toegevoegd)
+--------------------------------------------------------------------------------------------- */
+
+.uk-button-default {
+
+	background: #8CC14C;
+	color: white;
+	text-transform: none;
+}
+
+.uk-button-default:hover {
+    background-color: #87BF45;
+    color: white;
+}
+
+.uk-button-secondary {
+	text-transform: none;
+	}
+
+.uk-button {
+	text-transform: none;
+	}
+
+.uk-navbar-nav > li > a{
+	color: #fff;
+	text-transform: none;
+}
+
+.uk-logo {
+	color: #fff;		
+}
+
+.uk-subnav {
+	text-transform: none;
+}
+
+.uk-label {
+	text-transform: none;
+}
+
+.uk-subnav > * > :first-child {
+
+	text-transform: none;
+}
+
+.uk-table td {
+	/*padding: 25px 12px;*/
+}
+
+.uk-table th {
+	/*padding: 25px 12px;*/
+	text-transform: none;
+}
+
+.uk-button-default:hover {
+    background-color: #87BF45;
+    color: white;
+}
+
+.uk-icon-button {
+	width: 30px;
+	height: 30px;
+}
+
+.uk-badge-warning {
+	background-color: green;	
+}
+
+.icon-format-table {
+	width: 130px;
+	text-align: right;
+}
+
+/*  Font for casting header
+--------------------------------------------------------------------------------------------- */
+.tm-header-font {
+	font-family: 'Permanent Marker', cursive;
+	color: #ff0000;
+}
+
+
+/*Time and support registration page*/
+.pr-index-catalog{font-size:42px; line-height:42px;}
+
+/* Custom CSS for the product tags */
+.tags {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.tags li {
+    float: left;
+}
+
+.tag {
+    background: #eee;
+    border-radius: 3px 0 0 3px;
+    color: #999;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 20px 0 23px;
+    position: relative;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    -webkit-transition: color 0.2s;
+}
+
+.tag::before {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    content: '';
+    height: 6px;
+    left: 10px;
+    position: absolute;
+    width: 6px;
+    top: 10px;
+}
+
+.tag::after {
+    background: #fff;
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid #eee;
+    border-top: 13px solid transparent;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.tag:hover {
+    background-color: #00ADEF;
+    color: white;
+}
+
+.tag:hover::after {
+    border-left-color: #00ADEF;
+}

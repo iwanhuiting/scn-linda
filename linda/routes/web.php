@@ -29,6 +29,9 @@
 		/* Direct to the home page */
 		Route::get('/logout', ['as' => 'logout', 'uses' => 'LoginController@logout']);
 
+		/* Direct to the home page */
+		Route::get('/userpanel', ['as' => 'userpanel', 'uses' => 'AdminController@showUserPanel']);
+
 	});
 
 	Auth::routes();

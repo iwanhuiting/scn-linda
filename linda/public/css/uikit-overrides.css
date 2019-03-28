@@ -1,0 +1,7 @@
+/* Progress bars - danger and warning are not available in UIkit v3 */
+.uk-progress-warning {
+    background-color: #faa732 !important;
+}
+.uk-progress-danger {
+    background-color: #da314b !important;
+}
