@@ -17,7 +17,6 @@ class AddNamesToUsersTable extends Migration
             $table->longtext('last_name')->after('id');
             $table->longtext('middle_name')->after('id')->nullable();
             $table->longtext('first_name')->after('id');   
-            $table->longtext('super_user')->after('password');  
             $table->dropColumn('name');
         });
     }

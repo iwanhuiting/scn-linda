@@ -32,6 +32,10 @@
 		/* Direct to the home page */
 		Route::get('/userpanel', ['as' => 'userpanel', 'uses' => 'AdminController@showUserPanel']);
 
+		/* Direct to the home page */
+		Route::get('/video', ['as' => 'video', 'uses' => 'VideoController@showVideo']);
+
+
 	});
 
 	Auth::routes();
