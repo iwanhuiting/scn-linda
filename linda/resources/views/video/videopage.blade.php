@@ -2,14 +2,57 @@
 
 @section('main')
 
-	<div class="uk-margin-medium-left uk-margin-medium-top">
+	<div class="uk-margin-medium-top">
 
-		<video controls playsinline uk-video style="width: 98%;">
-		    <source src="videos/big_buck_bunny.mp4" type="video/mp4">
-		</video>
+		<div class="uk-container uk-container-large">
 
-		<div class="uk-text-medium" style="font-size: 20px; margin-top: 25px;">
-			This is a test bunny for the web page
+			<div class="uk-grid">
+
+				<div class="uk-width-3-5">
+					<video controls uk-video style="width: 100%;">
+					    <source src="{{asset('videos/' . $video['0']->video )}}" type="video/mp4">
+					</video>
+
+					<div class="uk-text-medium" style="font-size: 20px; margin-top: 25px;">
+						{{ $video['0']->title }} <br>
+						<span style="color: #666;"> {{ $video['0']->views }} weergaven </span>
+							<hr>
+						{{ $video['0']->description }}
+					</div>
+				</div>
+
+				<div class="uk-width-2-5">
+
+					<h3 class="uk-text-center">Video's van dezelfde gebruiker</h3>
+				         
+				    <div class="uk-grid">      
+
+						@foreach($reccomendedvideos as $reccomendedvideo)
+
+	                        <div class="uk-width-1-2 uk-text-center">
+	                        	<div class="uk-margin">
+		                            <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
+		                            	<a href="{{ route('single.catagory', ['id' => $reccomendedvideo->id]) }}">
+		                                	<img src="{{asset('images/' . $reccomendedvideo->thumbnail )}}" style="height: 150px; width:267px;" alt="">
+		                                </a>
+		                            </div>
+		                            <hr class="uk-margin-small-left" style="width: 267px;">
+		                        </div>
+	                        </div>
+
+	                        <div class="uk-text-left uk-width-1-2">
+                            	{{ $reccomendedvideo->title }}<br>
+                            	{{ $reccomendedvideo->views }} weergaven
+                            </div>
+
+	                    @endforeach
+
+	                </div>    
+						
+				</div>
+
+			</div>
+
 		</div>
 
 	</div>
