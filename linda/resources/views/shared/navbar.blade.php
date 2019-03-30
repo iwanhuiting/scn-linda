@@ -10,11 +10,13 @@
 
             <span class="uk-navbar-right">
 
-                @if($attributes['mode'] == 'catagory.overview')
-                    <a href="{{ route('addCatagory') }}" class="uk-button uk-button-default" style="color: white;">
-                        Nieuwe catagorie toevoegen
-                    </a>
-                @endif
+                @if(isset($attributes))
+                    @if($attributes['mode'] == 'catagory.overview')
+                        <a href="{{ route('addCatagory') }}" class="uk-button uk-button-default" style="color: white;">
+                            Nieuwe catagorie toevoegen
+                        </a>
+                    @endif
+                @endif    
 
                 @if(isset($currentuser->first_name))
                     <button class="uk-button uk-button-default uk-text-capitalize" style="height: 100%; color: white; border: none;" type="button">@if($currentuser->first_name) {{ $currentuser->first_name }} @endif</button>

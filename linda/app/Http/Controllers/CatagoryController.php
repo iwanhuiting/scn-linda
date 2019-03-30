@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
+use App\Processors\CatagoryProcessor;
+use Illuminate\Http\Request;
 use App\Models\Catagory;
+use App\Models\Video;
 
 class catagoryController extends Controller
 
@@ -50,17 +54,41 @@ class catagoryController extends Controller
         return view('admin.catagory.addCatagory', compact('attributes'));
     }
 
+    public function storeCatagory(Request $request) {
+
+            if(Input::hasFile('file')){
+
+                $file = Input::file('file');
+                $name = time().'.'.$file->getClientOriginalName();
+                $file->move('images', $name);
+
+                // Instantiate a new registration processor and create the user.
+                $processor = new CatagoryProcessor();
+                $catagory = $processor->createCatagory($request, $name);
+
+            }
+
+        // return view.
+        return redirect()->route('homepage');
+    }
 
     /**
      * Show the home page.
      * @param String $id
      * @return \Illuminate\Http\Response
      */
-    public function storeCatagory(Request $request)
+    public function showSingleCatagory(Catagory $catagory, $id)
     {
-        // Instantiate a new registration processor and create the user.
-        $processor = new RegistrationProcessor();
-        $note = $processor->createUser($request);
+        // Get the user
+        $currentuser = Auth::user();
+
+        // Get the current catagory
+        $catagory = $catagory::find($id);
+
+        // Get the videos belonging to the catagory
+        $videos = Video::where('catagory_id', $id)
+               ->orderBy('created_at', 'desc')
+               ->get();
 
         // Set the view attributes.
         $attributes = [
@@ -69,7 +97,8 @@ class catagoryController extends Controller
         ];
 
         // return view.
-        return view('signup.signup', compact('attributes'));
+        return view('catagory.singleCatagory', compact('attributes', 'catagory', 'currentuser', 'videos'));
     }
+
 
 }

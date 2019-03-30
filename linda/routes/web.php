@@ -33,13 +33,19 @@
 		Route::get('/userpanel', ['as' => 'userpanel', 'uses' => 'AdminController@showUserPanel']);
 
 		/* Direct to the home page */
-		Route::get('/video', ['as' => 'video', 'uses' => 'VideoController@showVideo']);
+		Route::get('{id}/video', ['as' => 'video', 'uses' => 'VideoController@showVideo']);
 
 		/* Direct to the home page */
 		Route::get('/catagory', ['as' => 'overviewCatagory', 'uses' => 'CatagoryController@showCatagoryOverview']);
 
 		/* Direct to the home page */
 		Route::get('/catagory/add', ['as' => 'addCatagory', 'uses' => 'CatagoryController@showAddCatagory']);
+
+		/* Direct to the home page */
+		Route::post('/catagory/add', ['as' => 'addCatagory', 'uses' => 'CatagoryController@storeCatagory']);
+
+		/* Direct to the singe catagory view */
+		Route::get('{id}/catagory', ['as' => 'single.catagory', 'uses' => 'CatagoryController@showSingleCatagory']);
 
 
 	});
