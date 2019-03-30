@@ -60,5 +60,23 @@ class VideoController extends Controller
         return view('video.createvideo', compact('attributes'));
     }
 
+    /**
+     * Show the home page.
+     * @param String $id
+     * @return \Illuminate\Http\Response
+     */
+    public function storeVideo()
+    {
+
+        // Set the view attributes.
+        $attributes = [
+            'mode' => 'registration',
+            'caption' => 'hier komt nog een caption',
+        ];
+
+        // return view.
+        return view('video.createvideo', compact('attributes'));
+    }
+
 
 }
