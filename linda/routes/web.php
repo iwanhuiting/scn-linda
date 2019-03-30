@@ -35,6 +35,12 @@
 		/* Direct to the home page */
 		Route::get('/video', ['as' => 'video', 'uses' => 'VideoController@showVideo']);
 
+		/* Direct to the home page */
+		Route::get('/catagory', ['as' => 'overviewCatagory', 'uses' => 'CatagoryController@showCatagoryOverview']);
+
+		/* Direct to the home page */
+		Route::get('/catagory/add', ['as' => 'addCatagory', 'uses' => 'CatagoryController@showAddCatagory']);
+
 
 	});
 

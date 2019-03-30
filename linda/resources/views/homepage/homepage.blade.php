@@ -15,34 +15,18 @@
         <div class="uk-container" >
             <div class="uk-inline-clip" style="width: 100%;">
                 <div class="uk-grid-match uk-grid-small" uk-grid>
-                    <div class="uk-width-1-3 uk-margin-medium-top uk-text-center">
-                        <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
-                                <img src="images/php-leader.png" style="height: 220px;" alt="">
-                            <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
-                                <p class="uk-h4 uk-margin-remove">Log-in as a tutor</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="uk-width-1-3 uk-margin-medium-top" class="uk-text-center">
-                        <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
-                                <img src="images/java-script.jpg" style="height: 220px; width: 390px;" alt="">    
-                            <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
-                                <p class="uk-h4 uk-margin-remove">Log-in as a student</p>
+                    @foreach($catagories as $catagorie)
+                        <div class="uk-width-1-3 uk-margin-medium-top uk-text-center">
+                            <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
+                                    <img src="images/{{ $catagorie->image }}" style="height: 220px; width:390px;" alt="">
+                                <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
+                                    <p class="uk-h4 uk-margin-remove">{{ $catagorie->title }}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="uk-width-1-3 uk-margin-medium-top" class="uk-text-center">
-                        <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
-                            <div style="width: 390px; background-color: white;">
-                                <img class="uk-position-center" src="images/html.png" style="height: 220px;" alt="">
-                            </div>
-                            <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
-                                <p class="uk-h4 uk-margin-remove">Log-in as a guest</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                    
                 </div>
             </div>
         </div>

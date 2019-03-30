@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use App\Models\Catagory;
 
 class homepageController extends Controller
 
@@ -33,8 +34,11 @@ class homepageController extends Controller
      * @param String $id
      * @return \Illuminate\Http\Response
      */
-    public function showHomePage()
+    public function showHomePage(Catagory $catagory)
     {
+        // Get all the catagories.
+        $catagories = Catagory::all();
+
         // Get the user
         $currentuser = Auth::user();
 
@@ -45,7 +49,7 @@ class homepageController extends Controller
         ];
 
         // return view.
-        return view('homepage.homepage', compact('currentuser', 'attributes'));
+        return view('homepage.homepage', compact('currentuser', 'catagories', 'attributes'));
     }
 
 }

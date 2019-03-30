@@ -8,21 +8,30 @@
                 <span class="uk-text-bold">IT</span>ogether
             </a>
 
-            @if(isset($currentuser->first_name))
             <span class="uk-navbar-right">
-                <button class="uk-button uk-button-default uk-text-capitalize" style="height: 100%; color: white; border: none;" type="button">@if($currentuser->first_name) {{ $currentuser->first_name }} @endif</button>
-                <div uk-dropdown>
-                    <ul class="uk-nav uk-dropdown-nav">
-                        <li class="uk-active">Algemene opties</li>
-                        <li><a href="{{ route('logout') }}">Log-uit</a></li>
-                        @if($currentuser->admin == 1)
-                            <li class="uk-active">Admin paneel</li>
-                            <li><a href="{{ route('userpanel') }} ">Gebruikers overzicht</a></li>
-                        @endif
-                    </ul>
-                </div>
+
+                @if($attributes['mode'] == 'catagory.overview')
+                    <a href="{{ route('addCatagory') }}" class="uk-button uk-button-default" style="color: white;">
+                        Nieuwe catagorie toevoegen
+                    </a>
+                @endif
+
+                @if(isset($currentuser->first_name))
+                    <button class="uk-button uk-button-default uk-text-capitalize" style="height: 100%; color: white; border: none;" type="button">@if($currentuser->first_name) {{ $currentuser->first_name }} @endif</button>
+                    <div uk-dropdown>
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li class="uk-active">Algemene opties</li>
+                            <li><a href="{{ route('logout') }}">Log-uit</a></li>
+                            @if($currentuser->admin == 1)
+                                <li class="uk-active">Admin paneel</li>
+                                <li><a href="{{ route('userpanel') }}">Gebruikers overzicht</a></li>
+                                <li><a href="{{ route('overviewCatagory') }}">Categorieën</a></li>
+                            @endif
+                        </ul>
+                    </div>
+                @endif
+
             </span>
-            @endif
 
         </nav>
 
