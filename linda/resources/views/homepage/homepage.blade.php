@@ -4,16 +4,17 @@
 
     <div class="uk-inline-clip" style="width: 100%; height: 300px; background-color: white;">
          <div class="uk-text-center uk-position-center">
-              <h2 class="uk-margin-remove-bottom">Welcome to 
+              <h2 class="uk-margin-remove-bottom">Welkom bij
                    <span style="color: #666;"><b>IT</b>ogether</span>
                     
               </h2>
-              <h3 class="uk-margin-remove-top" style="text-align: center;">This is a space for students and tutors to exchange information and intelligence on one simple platform.<br> Log-in below to acces all the videos and files, don't have an account yet? <a href="signup">Sign up</a></h3>
+              <h3 class="uk-margin-remove-top" style="text-align: center;">Dit is een plek waar leraren en leerlingen samen handige informatie kunnen delen.<br> Hieronder zie je de video catagorieën bekijken.</h3>
          </div>
     </div>
 
     <div class="uk-width-1" style="background-color: #f8fafc; z-index: -1;">
         <div class="uk-container" >
+            <h2 class="uk-text-center uk-margin-remove-bottom uk-margin-medium-top">Video Catagorieën</h3>
             <div class="uk-inline-clip" style="width: 100%;">
                 <div class="uk-grid-match uk-grid-small" uk-grid>
 

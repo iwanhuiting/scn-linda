@@ -18,7 +18,7 @@
 	        </div>
 
 	        <div class="uk-margin">
-	        	<textarea id="tinymce" placeholder="Hello World!"></textarea>
+	        	<textarea id="tinymce" name="description" placeholder="Hello World!"></textarea>
 	        </div>
 
 	        <div class="uk-margin">

@@ -17,7 +17,7 @@
 						{{ $video['0']->title }} <br>
 						<span style="color: #666;"> {{ $video['0']->views }} weergaven </span>
 							<hr>
-						{{ $video['0']->description }}
+						{!! $video['0']->description !!}
 					</div>
 				</div>
 
@@ -32,7 +32,7 @@
 	                        <div class="uk-width-1-2 uk-text-center">
 	                        	<div class="uk-margin">
 		                            <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
-		                            	<a href="{{ route('single.catagory', ['id' => $reccomendedvideo->id]) }}">
+		                            	<a href="{{ route('video', ['id' => $reccomendedvideo->id]) }}">
 		                                	<img src="{{asset('images/' . $reccomendedvideo->thumbnail )}}" style="height: 150px; width:267px;" alt="">
 		                                </a>
 		                            </div>

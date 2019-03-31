@@ -13,33 +13,34 @@ class VideoProcessor
      * Store the note in the database and flush the cache.
      * @param Request $request Post request.
      */
-	public function updateVideo(Request $request, $name)
+	public function storeVideo(Request $request, $thumbnailname, $videoname, $views, $id)
 	{
 
 		// Prepare data.
-		$data = $this->prepareData($request, $name);
+		$data = $this->prepareData($request, $thumbnailname, $videoname, $id, $views);
 
 		// Create catagory.
-		$catagory = Catagory::create($data);
+		$video = Video::create($data);
 
-		return $catagory;
+		return $video;
+
 	}
 
     /**
      * Prepare the data from the POST request.
      * @param Request $request Post request.
      */
-	private function prepareData($request, $thumbnail_name, $video_name, $views_count)
+	private function prepareData($request, $thumbnailname, $videoname, $id, $views)
 	{
 		// Set data array.
 		$data = [
 			'user_id' => Auth::user()->id,
 			'catagory_id' => $id,
-			'views' => $views_count,
+			'views' => $views,
 			'title' => $request->title,
-			'video' => $video_name,
+			'video' => $videoname,
 			'description' => $request->description,
-			'thumbnail' => $thumbnail_name,
+			'thumbnail' => $thumbnailname,
 		];
 
 		return $data;

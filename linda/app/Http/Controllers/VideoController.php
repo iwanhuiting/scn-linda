@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Processors\VideoProcessor;
 use Illuminate\Http\Request;
-use App\Models\User;
 use App\Models\Catagory;
 use App\Models\Video;
+use App\Models\User;
 
 class VideoController extends Controller
 
@@ -31,6 +34,13 @@ class VideoController extends Controller
         $reccomendedvideos = Video::where('user_id', $video['0']->user_id)
                ->orderBy('created_at', 'desc')
                ->get();
+
+        $newviews = $video['0']->views + 1;
+
+        // update the video views count       
+        DB::table('video')
+            ->where('id', $id)
+            ->update(['views' => $newviews]);
 
 		// Set the view attributes.
 		$attributes = [
@@ -65,8 +75,29 @@ class VideoController extends Controller
      * @param String $id
      * @return \Illuminate\Http\Response
      */
-    public function storeVideo()
+    public function storeVideo(Request $request, $id)
     {
+        $views = '0';
+
+        if(Input::hasFile('thumbnail')){
+
+            $file = Input::file('thumbnail');
+            $thumbnailname = time().'.'.$file->getClientOriginalName();
+            $file->move('images', $thumbnailname);
+
+        }
+
+        if(Input::hasFile('video')){
+
+            $file = Input::file('video');
+            $videoname = time().'.'.$file->getClientOriginalName();
+            $file->move('videos', $videoname);
+
+            // Instantiate a new registration processor and create the user.
+            $processor = new VideoProcessor();
+            $catagory = $processor->storeVideo($request, $thumbnailname, $videoname, $views, $id);
+            
+        }
 
         // Set the view attributes.
         $attributes = [

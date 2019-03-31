@@ -18,7 +18,7 @@ class Video extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_id', 'catagory_id', 'views', 'title', 'description',
+        'user_id', 'catagory_id', 'views', 'title', 'video', 'description', 'thumbnail',
     ];
     
 }

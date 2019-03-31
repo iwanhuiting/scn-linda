@@ -14,12 +14,11 @@
 
     <div class="uk-width-1" style="background-color: #f8fafc; z-index: -1;">
         <div class="uk-container" >
-            
-            @if(isset($videos['0']->title))
-                @foreach($videos as $video)
+            <div class="uk-inline-clip" style="width: 100%;">
+                <div class="uk-grid-match uk-grid-small" uk-grid>
 
-                    <div class="uk-inline-clip" style="width: 100%;">
-                        <div class="uk-grid-match uk-grid-small" uk-grid>
+                    @if(isset($videos['0']->title))
+                        @foreach($videos as $video)
                             <div class="uk-width-1-3 uk-margin-medium-top uk-text-center">
                                 <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
                                     <img src="{{asset('images/' . $video->thumbnail )}}" style="height: 220px; width:390px;" alt="">
@@ -30,18 +29,17 @@
                                     </a>
                                 </div>
                             </div>
+                        @endforeach
+                    @else
+
+                        <div class="uk-margin-top">
+                            <h3 class="uk-margin-remove-bottom">Helaas zijn er nog geen video's ge-upload naar de catagorie <span style="color: #1e87f0;">{{ $catagory->title }}</span></h3>
                         </div>
-                    </div>
-                    
-                @endforeach
-            @else
 
-                <div class="uk-text-center uk-margin-top">
-                    <h3 class="uk-margin-remove-bottom">Helaas zijn er nog geen video's ge-upload naar de catagorie <span style="color: #1e87f0;">{{ $catagory->title }}</span></h3>
-                </div>
+                    @endif   
 
-            @endif    
-                    
+                </div> 
+            </div>     
         </div>
     </div>
 
