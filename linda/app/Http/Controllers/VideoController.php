@@ -20,9 +20,9 @@ class VideoController extends Controller
      * @param String $id
      * @return \Illuminate\Http\Response
      */
-	public function showVideo(Video $video, Catagory $catagory, $id)
+	public function showVideo(Video $video, Catagory $catagory, User $user, $id)
 	{
-        // Get the user
+        // Get the user.
         $currentuser = Auth::user();
 
         // Get the videos beloning to the id.
@@ -33,14 +33,18 @@ class VideoController extends Controller
         // Get the videos to reccomend.
         $reccomendedvideos = Video::where('user_id', $video['0']->user_id)
                ->orderBy('created_at', 'desc')
+               ->take(6)
                ->get();
 
+        // Get the new amount of views.
         $newviews = $video['0']->views + 1;
 
-        // update the video views count       
-        DB::table('video')
-            ->where('id', $id)
+        // update the video views count.  
+        Video::where('id', $id)
             ->update(['views' => $newviews]);
+
+        // Get the uploader of the video.
+        $videocreator = User::where('id' , $video['0']->user_id)->get();
 
 		// Set the view attributes.
 		$attributes = [
@@ -49,7 +53,7 @@ class VideoController extends Controller
         ];
 
         // return view.
-		return view('video.videopage', compact('currentuser', 'attributes', 'video', 'reccomendedvideos'));
+		return view('video.videopage', compact('currentuser', 'attributes', 'video', 'reccomendedvideos', 'videocreator'));
 	}
 
     /**

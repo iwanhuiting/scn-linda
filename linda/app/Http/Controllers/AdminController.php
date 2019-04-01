@@ -24,7 +24,7 @@ class AdminController extends Controller
 
 
         // return view.
-        return view('admin.userpanel.userpanel', compact('currentuser', 'users'));
+        return view('channel.channelpage', compact('currentuser', 'users'));
 
     }
 

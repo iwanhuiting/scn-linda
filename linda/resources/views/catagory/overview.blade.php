@@ -2,19 +2,9 @@
 
 @section('main')
 
-    <div class="uk-inline-clip" style="width: 100%; height: 300px; background-color: white;">
-         <div class="uk-text-center uk-position-center">
-              <h2 class="uk-margin-remove-bottom">Welkom bij
-                   <span style="color: #666;"><b>IT</b>ogether</span>
-                    
-              </h2>
-              <h3 class="uk-margin-remove-top" style="text-align: center;">Dit is een plek waar leraren en leerlingen samen handige informatie kunnen delen.<br> Hieronder zie je de video catagorieën bekijken.</h3>
-         </div>
-    </div>
-
     <div class="uk-width-1" style="background-color: #f8fafc; z-index: -1;">
         <div class="uk-container" >
-            <h2 class="uk-text-center uk-margin-remove-bottom uk-margin-medium-top">Populairste video Catagorieën</h3>
+            <h2 class="uk-text-center uk-margin-remove-bottom uk-margin-medium-top">Alle video Catagorieën</h3>
             <div class="uk-inline-clip" style="width: 100%;">
                 <div class="uk-grid-match uk-grid-small" uk-grid>
 
@@ -33,12 +23,6 @@
                             </div>
                             
                         @endforeach
-
-                        <h3 class="uk-width-1" style="text-align: right;">
-                            <a href="{{ route('all.catagories') }}" class="uk-link-text">Toon alle Catagorieën &#8594;</a>
-                        </h3>
-
-                        <hr>
 
                     @else
 

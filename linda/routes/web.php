@@ -45,6 +45,9 @@
 		Route::get('/catagory', ['as' => 'overviewCatagory', 'uses' => 'CatagoryController@showCatagoryOverview']);
 
 		/* Direct to the home page */
+		Route::get('/catagories', ['as' => 'all.catagories', 'uses' => 'CatagoryController@showAllOverview']);
+
+		/* Direct to the home page */
 		Route::get('/catagory/add', ['as' => 'addCatagory', 'uses' => 'CatagoryController@showAddCatagory']);
 
 		/* Direct to the home page */
@@ -52,6 +55,9 @@
 
 		/* Direct to the singe catagory view */
 		Route::get('/catagory/{id}', ['as' => 'single.catagory', 'uses' => 'CatagoryController@showSingleCatagory']);
+
+		/* Direct to the home page */
+		Route::get('{id}/channel', ['as' => 'channel.page', 'uses' => 'ChannelController@showChannel']);
 
 
 	});

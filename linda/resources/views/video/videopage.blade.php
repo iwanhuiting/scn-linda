@@ -14,10 +14,25 @@
 					</video>
 
 					<div class="uk-text-medium" style="font-size: 20px; margin-top: 25px;">
-						{{ $video['0']->title }} <br>
-						<span style="color: #666;"> {{ $video['0']->views }} weergaven </span>
+						<div class="uk-grid">
+
+							<div class="uk-width-3-5">
+								{{ $video['0']->title }} <br>
+								<span style="color: #666;"> {{ $video['0']->views }} weergaven </span>
+							</div>
+
+							<div class="uk-width-2-5">
+								<a href="{{ route('channel.page' , ['id' => $videocreator['0']->id]) }}" class="uk-link-text">
+									{{ $videocreator['0']->first_name }} {{ $videocreator['0']->middle_name }} {{ $videocreator['0']->last_name }}
+								</a>
+							</div>
+
+						</div>
+
 							<hr>
+							
 						{!! $video['0']->description !!}
+
 					</div>
 				</div>
 
