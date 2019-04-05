@@ -38,7 +38,7 @@
 
 				<div class="uk-width-2-5">
 
-					<h3 class="uk-text-center">Video's van dezelfde gebruiker</h3>
+					<h3 class="uk-text-center">Video's van dezelfde catagorie</h3>
 				         
 				    <div class="uk-grid">      
 

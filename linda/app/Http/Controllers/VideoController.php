@@ -27,11 +27,10 @@ class VideoController extends Controller
 
         // Get the videos beloning to the id.
         $video = Video::where('id', $id)
-               ->orderBy('created_at', 'desc')
                ->get();
 
         // Get the videos to reccomend.
-        $reccomendedvideos = Video::where('user_id', $video['0']->user_id)
+        $reccomendedvideos = Video::where('catagory_id', $video['0']->catagory_id)
                ->orderBy('created_at', 'desc')
                ->take(6)
                ->get();
@@ -110,7 +109,7 @@ class VideoController extends Controller
         ];
 
         // return view.
-        return view('video.createvideo', compact('attributes'));
+        return redirect()->route('single.catagory', ['id' => $id]);
     }
 
 
