@@ -34,6 +34,7 @@
 						{!! $video['0']->description !!}
 
 					</div>
+
 				</div>
 
 				<div class="uk-width-2-5">

@@ -20,6 +20,10 @@
 	            <input class="uk-input uk-width-2-5 uk-text-center" type="text" name="last_name" placeholder="Achternaam">
 	        </div>
 
+			<div>
+				<input  class="uk-input ukwidth-4-5 uk-text-center" type="text" name="username" placeholder="Leerlingnummer ">
+			</div>	        	
+
 	        <div class="uk-margin">
 	            <input class="uk-input uk-text-center" type="email" name="email" placeholder="E-mail">
 	        </div>

@@ -35,7 +35,8 @@ class homepageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function showHomePage(Catagory $catagory)
-    {
+    { 
+
         // Get all the catagories.
         $catagories = Catagory::orderBy('created_at', 'desc')->take(6)->get();
 

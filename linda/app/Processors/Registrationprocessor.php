@@ -17,6 +17,7 @@ class RegistrationProcessor
 	{
 		$admin['admin' = '0', 'super_user' = '0'];
 
+
 		// Prepare data.
 		$data = $this->prepareData($request);
 
@@ -34,8 +35,11 @@ class RegistrationProcessor
 	{
 		// Set data array.
 		$data = [
+			'admin' => '0',
+			'super_user' => '0',
 			'first_name' => $request->first_name,
 			'middle_name' => $request->middle_name,
+			'username' => $request->username,
 			'last_name' => $request->last_name,
 			'email' => $request->email,
 		];
