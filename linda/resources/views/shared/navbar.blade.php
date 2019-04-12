@@ -19,7 +19,7 @@
                 @endif    
 
                 @if(isset($currentuser->first_name))
-                    <button class="uk-button uk-button-default uk-text-capitalize" style="height: 100%; color: white; border: none;" type="button">@if($currentuser->first_name) {{ $currentuser->first_name }} @endif</button>
+                    <button class="uk-button uk-button-default uk-text-capitalize" style="height: 100%; color: white; border: none; font-size: 18px;" type="button">@if($currentuser->first_name) {{ $currentuser->first_name }} @endif</button>
                     <div uk-dropdown>
                         <ul class="uk-nav uk-dropdown-nav">
                             <li class="uk-active">Algemene opties</li>

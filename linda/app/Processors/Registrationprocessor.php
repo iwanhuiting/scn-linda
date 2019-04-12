@@ -15,6 +15,7 @@ class RegistrationProcessor
      */
 	public function createUser(Request $request)
 	{
+		$admin['admin' = '0', 'super_user' = '0'];
 
 		// Prepare data.
 		$data = $this->prepareData($request);

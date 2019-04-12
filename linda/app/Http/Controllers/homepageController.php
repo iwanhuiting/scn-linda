@@ -37,7 +37,7 @@ class homepageController extends Controller
     public function showHomePage(Catagory $catagory)
     {
         // Get all the catagories.
-        $catagories = Catagory::all()->take(6);
+        $catagories = Catagory::orderBy('created_at', 'desc')->take(6)->get();
 
         // Get the user
         $currentuser = Auth::user();

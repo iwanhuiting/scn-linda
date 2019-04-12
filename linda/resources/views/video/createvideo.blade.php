@@ -30,12 +30,19 @@
 
 			<div class="uk-margin">
 		        <div class="js-upload uk-width-1-1" uk-form-custom>
-				    <input type="file" name="video" id="file">
+				    <input type="file" name="video" id="video">
 				    <button class="uk-button uk-button-default uk-width-1-1" type="button" tabindex="-1">Selecteer de video</button>
+					<script type="text/javascript">
+						function video(e) {
+						    if(document.getElementById("video").value != "") {
+							   document.write('<div>Print this after the script tag</div>');
+							}
+						}
+					</script>
 				</div>
 			</div>
 
-	        <button type="submit" form="video-form" class="uk-button uk-button-primary uk-width-1-1">Toevoegen</button>
+	        <button onclick="video" type="submit" form="video-form" class="uk-button uk-button-primary uk-width-1-1">Toevoegen</button>
 
 	    </fieldset>
 
