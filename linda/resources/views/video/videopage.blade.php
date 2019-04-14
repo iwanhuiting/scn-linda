@@ -31,7 +31,11 @@
 
 							<hr>
 							
-						{!! $video['0']->description !!}
+							{!! $video['0']->description !!}
+
+							<hr>
+
+							
 
 					</div>
 

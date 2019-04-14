@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Processors\VideoProcessor;
 use Illuminate\Http\Request;
 use App\Models\Catagory;
+use App\Models\Comment;
 use App\Models\Video;
 use App\Models\User;
 
