@@ -48,6 +48,9 @@
 		Route::post('{id}/video/create', ['as' => 'create.video', 'uses' => 'VideoController@storeVideo']);
 
 		/* Direct to the home page */
+		Route::get('/videopanel', ['as' => 'userpanel', 'uses' => 'AdminController@showVideoPanel']);
+
+		/* Direct to the home page */
 		Route::get('/catagory', ['as' => 'overviewCatagory', 'uses' => 'CatagoryController@showCatagoryOverview']);
 
 		/* Direct to the home page */
