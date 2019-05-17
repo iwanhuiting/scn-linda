@@ -33,6 +33,9 @@
 		Route::get('/userpanel', ['as' => 'userpanel', 'uses' => 'AdminController@showUserPanel']);
 
 		/* Direct to the home page */
+		Route::get('/playlist/create', ['as' => 'playlist.create', 'uses' => 'PlaylistController@showCreatePlaylist']);
+
+		/* Direct to the home page */
 		Route::get('{id}/video', ['as' => 'video', 'uses' => 'VideoController@showVideo']);
 
 		/* Direct to the home page */

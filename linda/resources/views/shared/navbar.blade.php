@@ -28,6 +28,7 @@
                             <li class="uk-active">Kanaal opties</li>
                             @if($currentuser->admin == 1)
                                 <li class="uk-active">Admin paneel</li>
+                                <li><a href="{{ route('playlist.create') }}">Afspeellijst toevoegen</a></li>
                                 <li><a href="{{ route('userpanel') }}">Gebruikers overzicht</a></li>
                                 <li><a href="{{ route('overviewCatagory') }}">Categorieën</a></li>
                             @endif
