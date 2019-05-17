@@ -36,6 +36,9 @@
 		Route::get('{id}/video', ['as' => 'video', 'uses' => 'VideoController@showVideo']);
 
 		/* Direct to the home page */
+		Route::post('{id}/video', ['as' => 'video', 'uses' => 'CommentController@storeComment']);
+
+		/* Direct to the home page */
 		Route::get('{id}/video/create', ['as' => 'create.video', 'uses' => 'VideoController@showCreateVideo']);
 
 		/* Direct to the home page */

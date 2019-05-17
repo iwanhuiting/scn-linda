@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Processors\VideoProcessor;
 use Illuminate\Http\Request;
 use App\Models\Catagory;
+use App\Models\Comment;
 use App\Models\Video;
 use App\Models\User;
 
@@ -30,9 +31,15 @@ class VideoController extends Controller
                ->get();
 
         // Get the videos to reccomend.
-        $reccomendedvideos = Video::where('catagory_id', $video['0']->catagory_id)
+        $reccomendedvideos = Video::where([['catagory_id', $video['0']->catagory_id],  ['id','!=',$id]])
                ->orderBy('created_at', 'desc')
                ->take(6)
+               ->get();
+
+
+        // Get the videos to reccomend.
+        $comments = Comment::where('video_id', $id)
+               ->orderBy('created_at', 'desc')
                ->get();
 
         // Get the new amount of views.
@@ -45,6 +52,9 @@ class VideoController extends Controller
         // Get the uploader of the video.
         $videocreator = User::where('id' , $video['0']->user_id)->get();
 
+        // Get all the users.
+        $users = User::all();
+
 		// Set the view attributes.
 		$attributes = [
             'mode' => 'registration',
@@ -52,7 +62,7 @@ class VideoController extends Controller
         ];
 
         // return view.
-		return view('video.videopage', compact('currentuser', 'attributes', 'video', 'reccomendedvideos', 'videocreator'));
+		return view('video.videopage', compact('currentuser', 'attributes', 'video', 'reccomendedvideos', 'videocreator', 'comments', 'users'));
 	}
 
     /**

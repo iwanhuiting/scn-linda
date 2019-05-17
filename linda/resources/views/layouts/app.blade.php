@@ -29,8 +29,6 @@
             
         </main>
 
-        @include('shared.footer')
-
         @hasSection('modals')
             @yield('modals')
         @endif

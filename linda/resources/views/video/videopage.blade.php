@@ -1,4 +1,4 @@
-@extends('layouts.login')
+@extends('layouts.app')
 
 @section('main')
 
@@ -14,6 +14,7 @@
 					</video>
 
 					<div class="uk-text-medium" style="font-size: 20px; margin-top: 25px;">
+						
 						<div class="uk-grid">
 
 							<div class="uk-width-3-5">
@@ -29,9 +30,97 @@
 
 						</div>
 
+						@if(isset($video['0']->description))
+
 							<hr>
 							
-						{!! $video['0']->description !!}
+							<div> 
+
+								{!! $video['0']->description !!}
+
+							</div>
+
+						@endif
+
+						<hr>
+
+						<form id="comment-form"
+				          class="uk-form-stacked"
+				          action="#"
+				          method="post">
+				          @csrf
+
+						    <fieldset class="uk-fieldset uk-margin-medium-bottom">
+
+						        <legend class="uk-legend uk-text-center">Vragen over de stof</legend>
+
+						        <div class="uk-margin">
+						            <textarea id="tinymce" class="uk-width-1" name="title" placeholder="Hello World!"></textarea>
+						            <input type="hidden" name="response" value="0">
+						            <input type="hidden" name="responseto" value="0">
+						        </div>  
+
+						        <button class="uk-button uk-button-primary uk-width-1">Plaatsen</button>
+
+						    </fieldset>
+						    
+						</form>
+
+						@if($comments)
+
+							<div class="uk-margin-medium-bottom uk-text-small">
+
+								@foreach($comments as $comment)
+
+									<hr>
+
+									<div class="uk-grid">
+
+										<div style="width: 10%;">PF</div>
+
+										<div style="width: 90%;">
+											<a href="{{ route('channel.page' , ['id' => $comment->user_id]) }}" class="uk-link-text">
+												{{ $comment->user->first_name }} {{ $comment->user->middle_name }} {{ $comment->user->last_name }} op {{ Carbon\Carbon::parse( $comment->created_at )->format('d/m/Y') }} 
+											</a>
+										</div>
+
+										<div style="width: 10%;"></div>
+
+										<div style="width: 90%;">{!! $comment->title !!}</div>
+
+										<div style="width: 10%;"></div>
+
+										<div style="width: 90%;">
+
+											<button class="btn btn btn-primary" data-id="{{ $comment->id }}" onclick="showHide('replycomment-{{ $comment->id }}');">
+											    <span> Beantwoorden </span>
+											</button>
+
+											<div id="replycomment-{{ $comment->id }}" style="display: none; margin-top: 20px;"> 
+												<script>
+													var tiny = <?php echo(json_encode($comment->id)); ?>;
+													tinymce.init({ selector: `#tinymce-${tiny}`});
+												</script>
+												<textarea id="tinymce-{{ $comment->id }}" class="uk-width-1" name="title" placeholder="Hello World!"></textarea>
+											</div>
+
+											<script>
+
+											    function showHide(id){
+											        $("#"+id).toggle();
+											    }
+
+											</script>
+
+										</div>
+
+									</div>
+
+								@endforeach
+
+						    </div>
+						    	
+						@endif
 
 					</div>
 
@@ -56,7 +145,7 @@
 		                        </div>
 	                        </div>
 
-	                        <div class="uk-text-left uk-width-1-2">
+	                        <div class="uk-text-left uk-width-1-2 ">
                             	{{ $reccomendedvideo->title }}<br>
                             	{{ $reccomendedvideo->views }} weergaven
                             </div>
