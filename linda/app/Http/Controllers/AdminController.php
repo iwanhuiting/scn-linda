@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Video;
 
 class AdminController extends Controller
 
@@ -25,6 +26,16 @@ class AdminController extends Controller
 
         // return view.
         return view('admin.userpanel.userpanel', compact('currentuser', 'users'));
+
+    }
+
+    public function showVideoPanel(Video $video)
+    {
+        // Get all the videos.
+        $videos = Video::all();
+
+        // return view.
+        return view('admin.videopanel.videopanel', compact('videos'));
 
     }
 
