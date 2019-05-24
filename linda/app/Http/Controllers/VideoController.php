@@ -38,7 +38,12 @@ class VideoController extends Controller
 
 
         // Get the videos to reccomend.
-        $comments = Comment::where('video_id', $id)
+        $comments = Comment::where([['video_id', $id], ['response', '0']])
+               ->orderBy('created_at', 'desc')
+               ->get();
+
+        // Get the videos to reccomend.
+        $responses = Comment::where([['video_id', $id], ['response', '1']])
                ->orderBy('created_at', 'desc')
                ->get();
 
@@ -62,7 +67,7 @@ class VideoController extends Controller
         ];
 
         // return view.
-		return view('video.videopage', compact('currentuser', 'attributes', 'video', 'reccomendedvideos', 'videocreator', 'comments', 'users'));
+		return view('video.videopage', compact('currentuser', 'attributes', 'video', 'reccomendedvideos', 'videocreator', 'comments', 'users', 'responses'));
 	}
 
     /**

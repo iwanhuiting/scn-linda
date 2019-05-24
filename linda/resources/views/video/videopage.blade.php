@@ -82,6 +82,9 @@
 											<a href="{{ route('channel.page' , ['id' => $comment->user_id]) }}" class="uk-link-text">
 												{{ $comment->user->first_name }} {{ $comment->user->middle_name }} {{ $comment->user->last_name }} op {{ Carbon\Carbon::parse( $comment->created_at )->format('d/m/Y') }} 
 											</a>
+											<a onclick="showHide('replycomment-{{ $comment->id }}');" class="uk-align-right">
+											<img src="https://img.icons8.com/metro/26/000000/reply-arrow.png">Beantwoorden
+											</a>
 										</div>
 
 										<div style="width: 10%;"></div>
@@ -92,16 +95,31 @@
 
 										<div style="width: 90%;">
 
-											<button class="btn btn btn-primary" data-id="{{ $comment->id }}" onclick="showHide('replycomment-{{ $comment->id }}');">
-											    <span> Beantwoorden </span>
-											</button>
-
 											<div id="replycomment-{{ $comment->id }}" style="display: none; margin-top: 20px;"> 
+
 												<script>
 													var tiny = <?php echo(json_encode($comment->id)); ?>;
 													tinymce.init({ selector: `#tinymce-${tiny}`});
 												</script>
-												<textarea id="tinymce-{{ $comment->id }}" class="uk-width-1" name="title" placeholder="Hello World!"></textarea>
+
+												<form id="comment-form"
+										          class="uk-form-stacked"
+										          action="#"
+										          method="post">
+										          @csrf
+
+													<fieldset class="uk-fieldset">
+
+														<textarea id="tinymce-{{ $comment->id }}" class="uk-width-1" name="title" placeholder="Hello World!"></textarea>
+											            <input type="hidden" name="response" value="1">
+											            <input type="hidden" name="responseto" value="{{ $comment->id }}">
+
+											         	<button class="uk-button uk-button-primary" style="width: 100.25%;">Plaatsen</button>
+
+												    </fieldset>
+
+												</form>
+
 											</div>
 
 											<script>
@@ -113,6 +131,34 @@
 											</script>
 
 										</div>
+
+										@foreach($responses as $response)
+												
+											@if($response->response_to == $comment->id)
+
+												<div style="width: 15%;"></div>
+
+												<div style="width: 85%;">
+
+													<hr class="uk-margin-medium-top">
+
+													<a href="{{ route('channel.page' , ['id' => $response->user_id]) }}" class="uk-link-text">
+														{{ $response->user->first_name }} {{ $response->user->middle_name }} {{ $response->user->last_name }} op {{ Carbon\Carbon::parse( $response->created_at )->format('d/m/Y') }} 
+													</a>
+
+												</div>
+
+												<div style="width: 15%;"></div>
+
+												<div style="width: 85%;">
+
+													<div> {!! $response->title !!} </div>
+
+												</div>
+
+											@endif
+
+										@endforeach
 
 									</div>
 
